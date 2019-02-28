@@ -1,0 +1,29 @@
+---
+- name: Install package
+  become: True
+  package:
+    name: kubernetes-hyperkube-kubelet
+    state: present
+
+- name: Configure package
+  become: True
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - src: systemd.service.j2
+      dest: /etc/systemd/system/kubelet.service
+    - src: kubelet.j2
+      dest: /etc/default/kubelet
+  notify:
+    - Reload systemd
+    - Restart kubelet
+
+- name: Start service
+  service:
+    name: kubelet
+    state: started
+    enabled: True

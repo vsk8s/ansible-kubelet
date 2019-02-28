@@ -1,0 +1,13 @@
+[Unit]
+Description=Kubernetes Node Agent
+
+[Service]
+EnvironmentFile=/etc/default/kubelet
+ExecStart=/usr/bin/hyperkube kubelet $DAEMON_ARGS
+Restart=on-failure
+Type=simple
+ExecStop=/bin/kill $MAINPID
+ExecStop=/bin/kill $MAINPID
+
+[Install]
+WantedBy=multi-user.target

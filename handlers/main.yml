@@ -1,0 +1,11 @@
+---
+- name: Reload systemd
+  become: True
+  command: systemctl daemon-reload
+
+- name: Restart kubelet
+  become: True
+  service:
+    name: kubelet
+    state: restarted
+    enabled: True
