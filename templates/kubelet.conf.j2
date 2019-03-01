@@ -1,0 +1,20 @@
+kind: KubeletConfiguration
+apiVersion: kubelet.config.k8s.io/v1beta1
+evictionHard:
+    memory.available:  "128Mi"
+authentication:
+  anonymous:
+    enabled: false
+  x509:
+    clientCAFile: "{{ kubelet_ca }}"
+staticPodPath: {{ kubelet_static_pod_path }}
+healthzBindAddress: 127.0.0.1
+healthzPort: 10250
+kubeletCgroups: "/systemd/system.slice"
+tlsCertFile: "{{ kubelet_cert }}"
+tlsPrivateKeyFile: "{{ kubelet_key }}"
+failSwapOn: False
+clusterDNS:
+{% for host in kubelet_dns %}
+  - {{ host }}
+{% endfor %}
