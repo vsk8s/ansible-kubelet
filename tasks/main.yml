@@ -5,6 +5,14 @@
     name: kubernetes-hyperkube-kubelet
     state: present
 
+- name: Create static pod directory
+  file:
+    name: "{{ kubelet_static_pod_path }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
 - name: Configure package
   become: True
   template:

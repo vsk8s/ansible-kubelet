@@ -6,6 +6,7 @@ kubelet_dns: []
 # - 10.0.0.25
 kubelet_cluster_domain: cluster.local
 kubelet_static_pod_path: /etc/kubernetes/kubelet/static_pods
+kubelet_containerd_socket: "/run/containerd/containerd.sock"
 
 kubelet_ca: "/etc/kubernetes/kubelet/server-ca.crt"
 kubelet_cert: "/etc/kubernetes/kubelet/server.cert"

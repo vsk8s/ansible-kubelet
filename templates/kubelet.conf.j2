@@ -14,6 +14,7 @@ kubeletCgroups: "/systemd/system.slice"
 tlsCertFile: "{{ kubelet_cert }}"
 tlsPrivateKeyFile: "{{ kubelet_key }}"
 failSwapOn: False
+runtimeRequestTimeout: 15m
 clusterDNS:
 {% for host in kubelet_dns %}
   - {{ host }}
