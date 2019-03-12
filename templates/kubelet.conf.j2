@@ -9,7 +9,7 @@ authentication:
     clientCAFile: "{{ kubelet_ca }}"
 staticPodPath: {{ kubelet_static_pod_path }}
 healthzBindAddress: 127.0.0.1
-healthzPort: 10250
+healthzPort: 10251
 kubeletCgroups: "/systemd/system.slice"
 tlsCertFile: "{{ kubelet_cert }}"
 tlsPrivateKeyFile: "{{ kubelet_key }}"
