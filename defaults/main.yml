@@ -2,8 +2,6 @@
 
 kubelet_config: "/etc/kubernetes/kubelet/config.conf"
 kubelet_kubeconfig: "/etc/kubernetes/kubelet/kubeconfig.yml"
-kubelet_dns: []
-# - 10.0.0.25
 kubelet_cluster_domain: cluster.local
 kubelet_static_pod_path: /etc/kubernetes/kubelet/static_pods
 kubelet_containerd_socket: "/run/containerd/containerd.sock"
