@@ -16,5 +16,5 @@ tlsPrivateKeyFile: "{{ kubelet_key }}"
 failSwapOn: False
 runtimeRequestTimeout: 15m
 clusterDNS:
-  - {{ kubelet_dns_ip }}
+  - {{ kubernetes_dns_service_ip }}
 clusterDomain: {{ kubelet_cluster_domain }}
