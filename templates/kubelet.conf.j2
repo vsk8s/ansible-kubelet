@@ -18,3 +18,12 @@ runtimeRequestTimeout: 15m
 clusterDNS:
   - {{ kubernetes_dns_service_ip }}
 clusterDomain: {{ kubelet_cluster_domain }}
+systemReserved:
+  cpu: "{{ kubelet_system_reserved.cpu }}"
+  memory: "{{ kubelet_system_reserved.memory }}"
+systemReservedCgroup: "/system-reserved"
+kubeReserved:
+  cpu: "{{ kubelet_kube_reserved.cpu }}"
+  memory: "{{ kubelet_kube_reserved.memory }}"
+cgroupDriver: "systemd"
+kubeReservedCgroup: "/kube-reserved"

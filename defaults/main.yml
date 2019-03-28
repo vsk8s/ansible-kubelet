@@ -11,3 +11,11 @@ kubernetes_dns_service_ip: "10.0.8.8/33"
 kubelet_ca: "/etc/kubernetes/kubelet/server-ca.crt"
 kubelet_cert: "/etc/kubernetes/kubelet/server.cert"
 kubelet_key: "/etc/kubernetes/kubelet/server.key"
+
+kubelet_kube_reserved:
+  cpu: 100m
+  memory: 100Mi
+
+kubelet_system_reserved:
+  cpu: 200m
+  memory: 200Mi
