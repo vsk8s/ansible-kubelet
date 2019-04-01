@@ -17,7 +17,7 @@ failSwapOn: False
 runtimeRequestTimeout: 15m
 clusterDNS:
   - {{ kubernetes_dns_service_ip }}
-clusterDomain: {{ kubelet_cluster_domain }}
+clusterDomain: {{ kubernetes_cluster_domain }}
 systemReserved:
   cpu: "{{ kubelet_system_reserved.cpu }}"
   memory: "{{ kubelet_system_reserved.memory }}"
