@@ -6,9 +6,11 @@
     state: present
 
 - name: Create static pod directory
+  become: True
   file:
     name: "{{ kubelet_static_pod_path }}"
     state: directory
+    recurse: True
     owner: root
     group: root
     mode: 0755
@@ -31,6 +33,7 @@
     - Restart kubelet
 
 - name: Start service
+  become: True
   service:
     name: kubelet
     state: started
