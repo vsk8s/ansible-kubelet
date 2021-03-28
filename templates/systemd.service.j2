@@ -2,7 +2,7 @@
 Description=Kubernetes Node Agent
 
 [Service]
-ExecStart=/usr/bin/hyperkube kubelet --config {{ kubelet_config }}          \
+ExecStart=/usr/bin/kubelet --config {{ kubelet_config }}                    \
             --kubeconfig {{ kubelet_kubeconfig }}                           \
             --hostname-override {{ ansible_fqdn }}                          \
             --container-runtime=remote                                      \

@@ -1,9 +1,4 @@
 ---
-- name: Install package
-  become: True
-  package:
-    name: kubernetes-hyperkube-kubelet
-    state: present
 
 - name: Create static pod directory
   become: True
