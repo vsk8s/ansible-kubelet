@@ -6,6 +6,8 @@ ExecStart=/usr/bin/kubelet --config {{ kubelet_config }}                    \
             --kubeconfig {{ kubelet_kubeconfig }}                           \
             --hostname-override {{ ansible_fqdn }}                          \
             --container-runtime=remote                                      \
+            {% if not kubelet_propagate_host_resolvconf %}--resolv-conf=""  \
+            {% endif -%}
             --container-runtime-endpoint=unix://{{ kubelet_containerd_socket }}
 Restart=on-failure
 Type=simple
