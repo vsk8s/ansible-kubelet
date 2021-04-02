@@ -1,5 +1,11 @@
 ---
 
+- name: Install kubernetes-node
+  become: True
+  package:
+    name: kubernetes-node
+    state: present
+
 - name: Create static pod directory
   become: True
   file:
