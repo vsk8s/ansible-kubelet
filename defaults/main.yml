@@ -12,6 +12,7 @@ kubelet_ca: "/etc/kubernetes/kubelet/server-ca.crt"
 kubelet_cert: "/etc/kubernetes/kubelet/server.cert"
 kubelet_key: "/etc/kubernetes/kubelet/server.key"
 
+kubelet_propagate_host_resolvconf: True
 kubelet_kube_reserved:
   cpu: 100m
   memory: 100Mi
